@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ marca }}</title>
+    <link rel="stylesheet" href="{% static 'principal/css/style.css' %}">
+</head>
+<body>
+    <header class="hero" id="inicio">
+        <nav class="navbar">
+            <h2 class="logo">Colon<span>Vargas</span></h2>
+            <div>
+                <a href="#sobre-mi">Sobre mí</a>
+                <a href="#habilidades">Habilidades</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+        </nav>
+
+        <section class="hero-content">
+            <div class="hero-text">
+                <p class="tag">Marca personal</p>
+                <h1>Hola, soy <span>{{ nombre }}</span></h1>
+                <p>{{ descripcion }}</p>
+                <a class="btn" href="#contacto">Contactarme</a>
+            </div>
+            <div class="hero-card">
+                <div class="avatar">CV</div>
+                <h3>Desarrollador en formación</h3>
+                <p>Creatividad, tecnología y aprendizaje constante.</p>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <section id="sobre-mi" class="section">
+            <h2>Sobre mí</h2>
+            <p>
+                Soy una persona enfocada en aprender, crear soluciones tecnológicas y mejorar mis habilidades
+                en programación. Me interesa construir páginas web, sistemas interactivos y proyectos relacionados
+                con inteligencia artificial.
+            </p>
+        </section>
+
+        <section id="habilidades" class="section">
+            <h2>Habilidades</h2>
+            <div class="grid">
+                {% for habilidad in habilidades %}
+                <div class="card">{{ habilidad }}</div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section id="proyectos" class="section">
+            <h2>Proyectos</h2>
+            <div class="projects">
+                {% for proyecto in proyectos %}
+                <article class="project-card">
+                    <h3>{{ proyecto }}</h3>
+                    <p>Proyecto desarrollado como parte de mi crecimiento académico y tecnológico.</p>
+                </article>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section id="contacto" class="section contact">
+            <h2>Contacto</h2>
+            <p>Correo: <strong>tu_correo@example.com</strong></p>
+            <p>Ubicación: Ecuador</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Colon Vargas - Marca Personal</p>
+    </footer>
+</body>
+</html>
